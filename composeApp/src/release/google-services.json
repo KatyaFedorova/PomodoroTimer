@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "653658039232",
+    "project_id": "kittidoro-timer",
+    "storage_bucket": "kittidoro-timer.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653658039232:android:2baeff8cc9de0da4735e25",
+        "android_client_info": {
+          "package_name": "org.timer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653658039232-o458d8pml4eakl9la50qp9j7e5e0579t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxlqstGRjQ97h9581rGG9Xgx87UPEVgG0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "653658039232-o458d8pml4eakl9la50qp9j7e5e0579t.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "653658039232-2i6n7kh0c1u3q3gge95ppjptmorj2jud.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.KittydoroTimer"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

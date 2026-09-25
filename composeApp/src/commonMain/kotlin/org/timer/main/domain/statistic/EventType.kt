@@ -1,0 +1,10 @@
+package org.timer.main.domain.statistic
+
+enum class EventType {
+    POMODORO_COMPLETED,
+    EXERCISE_HIGH_ENERGY_COMPLETED,
+    EXERCISE_LOW_ENERGY_COMPLETED,
+    TASK_COMPLETED,
+    DANCE_COMPLETED,
+    CLEAR_YOUR_MIND_COMPLETED
+}

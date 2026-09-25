@@ -1,0 +1,4 @@
+#include "Config.xcconfig"
+
+APP_NAME = TomatoPawsDev
+BUNDLE_ID = org.timer.PomodoroTimer.dev

@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "org.timer",
+      "sha256_cert_fingerprints": [
+        "1C:AD:CE:37:86:65:8B:82:BE:7F:95:7F:36:51:13:5F:08:D2:F3:CA:91:71:75:CB:9B:C3:BA:A9:A1:C1:E7:72"
+      ]
+    }
+  }
+]

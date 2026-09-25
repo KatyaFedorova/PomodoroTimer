@@ -1,0 +1,1284 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 70;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
+		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
+		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
+		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
+		F50A40A52DE0D06900B9EDB8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50A40A42DE0D06900B9EDB8 /* WidgetKit.framework */; };
+		F50A40A72DE0D06900B9EDB8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50A40A62DE0D06900B9EDB8 /* SwiftUI.framework */; };
+		F50A40C02DE0D5B900B9EDB8 /* GeneratedLiveActivityBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50A40BF2DE0D5A400B9EDB8 /* GeneratedLiveActivityBridge.swift */; };
+		F50A40C12DE0D5E500B9EDB8 /* GeneratedLiveActivityBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50A40BF2DE0D5A400B9EDB8 /* GeneratedLiveActivityBridge.swift */; };
+		F51784D62E1F037600173905 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F51784D52E1F037600173905 /* FirebaseAuth */; };
+		F51784D92E1F071C00173905 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = F51784D82E1F071C00173905 /* GoogleSignIn */; };
+		F51784DB2E1F071C00173905 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F51784DA2E1F071C00173905 /* GoogleSignInSwift */; };
+		F51784DE2E20028000173905 /* FirebaseAuthBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51784DC2E20027600173905 /* FirebaseAuthBridge.swift */; };
+		F51D1D5D2EA252560030D70D /* LiveActivityScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AED5272DF9A0AD00699B16 /* LiveActivityScheduler.swift */; };
+		F51D1D5E2EA252560030D70D /* GeneratedLiveActivityBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50A40BF2DE0D5A400B9EDB8 /* GeneratedLiveActivityBridge.swift */; };
+		F51D1D5F2EA252560030D70D /* FirebaseAuthBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51784DC2E20027600173905 /* FirebaseAuthBridge.swift */; };
+		F51D1D602EA252560030D70D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6AA582DDCDD550018CB41 /* AppDelegate.swift */; };
+		F51D1D612EA252560030D70D /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
+		F51D1D622EA252560030D70D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
+		F51D1D642EA252560030D70D /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = F51D1D542EA252560030D70D /* FirebaseMessaging */; settings = {ATTRIBUTES = (Required, ); }; };
+		F51D1D652EA252560030D70D /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F51D1D5A2EA252560030D70D /* FirebaseFirestoreCombine-Community */; };
+		F51D1D662EA252560030D70D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F51D1D552EA252560030D70D /* FirebaseAuth */; };
+		F51D1D672EA252560030D70D /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F51D1D582EA252560030D70D /* GoogleSignInSwift */; };
+		F51D1D682EA252560030D70D /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = F51D1D512EA252560030D70D /* FirebaseCore */; };
+		F51D1D692EA252560030D70D /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = F51D1D532EA252560030D70D /* FirebaseFunctions */; };
+		F51D1D6A2EA252560030D70D /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = F51D1D562EA252560030D70D /* GoogleSignIn */; };
+		F51D1D6B2EA252560030D70D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F51D1D592EA252560030D70D /* FirebaseFirestore */; };
+		F51D1D6F2EA252560030D70D /* cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = F53B4A9F2DDA3482003E5156 /* cat.wav */; };
+		F51D1D712EA252560030D70D /* bird.wav in Resources */ = {isa = PBXBuildFile; fileRef = F5D6AA5A2DDCE4B90018CB41 /* bird.wav */; };
+		F51D1D722EA252560030D70D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
+		F51D1D732EA252560030D70D /* standard.wav in Resources */ = {isa = PBXBuildFile; fileRef = F5D6AA602DDCE4E00018CB41 /* standard.wav */; };
+		F51D1D742EA252560030D70D /* wolf.wav in Resources */ = {isa = PBXBuildFile; fileRef = F5D6AA622DDCE4ED0018CB41 /* wolf.wav */; };
+		F51D1D762EA252560030D70D /* dog.wav in Resources */ = {isa = PBXBuildFile; fileRef = F5D6AA5E2DDCE4D00018CB41 /* dog.wav */; };
+		F51D1D772EA252560030D70D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
+		F51D1D782EA252560030D70D /* buffalo.wav in Resources */ = {isa = PBXBuildFile; fileRef = F5D6AA5C2DDCE4C30018CB41 /* buffalo.wav */; };
+		F51D1D7A2EA252560030D70D /* TimerWidgetDev.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F50A40A32DE0D06900B9EDB8 /* TimerWidgetDev.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F52F0C6F2E250C85006E9E06 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F52F0C6E2E250C85006E9E06 /* FirebaseFirestore */; };
+		F52F0C712E250C85006E9E06 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F52F0C702E250C85006E9E06 /* FirebaseFirestoreCombine-Community */; };
+		F53B4AA02DDA3482003E5156 /* cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = F53B4A9F2DDA3482003E5156 /* cat.wav */; };
+		F56658CA2DF9B000009FF2CA /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = F56658C92DF9B000009FF2CA /* FirebaseCore */; };
+		F56658CC2DF9B000009FF2CA /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = F56658CB2DF9B000009FF2CA /* FirebaseFunctions */; };
+		F56658CE2DF9B000009FF2CA /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = F56658CD2DF9B000009FF2CA /* FirebaseMessaging */; settings = {ATTRIBUTES = (Required, ); }; };
+		F57417F42E9EC72100AC6B81 /* Dev.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F57417F22E9EC72100AC6B81 /* Dev.xcconfig */; };
+		F57417F62E9EC75F00AC6B81 /* Prod.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F57417F52E9EC75F00AC6B81 /* Prod.xcconfig */; };
+		F57BC8002DF9B6110037CD17 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = F57BC7FF2DF9B6110037CD17 /* FirebaseFunctions */; };
+		F57BC8012DF9B6440037CD17 /* LiveActivityScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AED5272DF9A0AD00699B16 /* LiveActivityScheduler.swift */; };
+		F57BC8032DF9B6660037CD17 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = F57BC8022DF9B6660037CD17 /* FirebaseMessaging */; };
+		F593D1242DE3C19900019FCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
+		F5AEC8252EC0EE880082FBF0 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F5AEC8232EC0EE880082FBF0 /* Config.xcconfig */; };
+		F5AEC8372EC1014C0082FBF0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50A40A42DE0D06900B9EDB8 /* WidgetKit.framework */; };
+		F5AEC8382EC1014C0082FBF0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50A40A62DE0D06900B9EDB8 /* SwiftUI.framework */; };
+		F5AEC8492EC1014F0082FBF0 /* TimerWidgetProd.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F5AEC8362EC1014C0082FBF0 /* TimerWidgetProd.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F5AEC8812EC3B6600082FBF0 /* GeneratedLiveActivityBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50A40BF2DE0D5A400B9EDB8 /* GeneratedLiveActivityBridge.swift */; };
+		F5AEC8822EC3B6C00082FBF0 /* LiveActivityScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AED5272DF9A0AD00699B16 /* LiveActivityScheduler.swift */; };
+		F5AEC8842EC3B7170082FBF0 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = F5AEC8832EC3B7170082FBF0 /* FirebaseFunctions */; };
+		F5AEC8862EC3B71D0082FBF0 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = F5AEC8852EC3B71D0082FBF0 /* FirebaseMessaging */; };
+		F5AEC8872EC3B8630082FBF0 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F5AEC8232EC0EE880082FBF0 /* Config.xcconfig */; };
+		F5AEC8882EC3B8680082FBF0 /* Dev.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F57417F22E9EC72100AC6B81 /* Dev.xcconfig */; };
+		F5AEC8892EC3B8780082FBF0 /* Prod.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F57417F52E9EC75F00AC6B81 /* Prod.xcconfig */; };
+		F5AED5282DF9A0AE00699B16 /* LiveActivityScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AED5272DF9A0AD00699B16 /* LiveActivityScheduler.swift */; };
+		F5D6AA592DDCDD580018CB41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6AA582DDCDD550018CB41 /* AppDelegate.swift */; };
+		F5D6AA5B2DDCE4B90018CB41 /* bird.wav in Resources */ = {isa = PBXBuildFile; fileRef = F5D6AA5A2DDCE4B90018CB41 /* bird.wav */; };
+		F5D6AA5D2DDCE4C30018CB41 /* buffalo.wav in Resources */ = {isa = PBXBuildFile; fileRef = F5D6AA5C2DDCE4C30018CB41 /* buffalo.wav */; };
+		F5D6AA5F2DDCE4D00018CB41 /* dog.wav in Resources */ = {isa = PBXBuildFile; fileRef = F5D6AA5E2DDCE4D00018CB41 /* dog.wav */; };
+		F5D6AA612DDCE4E00018CB41 /* standard.wav in Resources */ = {isa = PBXBuildFile; fileRef = F5D6AA602DDCE4E00018CB41 /* standard.wav */; };
+		F5D6AA632DDCE4ED0018CB41 /* wolf.wav in Resources */ = {isa = PBXBuildFile; fileRef = F5D6AA622DDCE4ED0018CB41 /* wolf.wav */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F51D1D502EA252560030D70D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7555FF73242A565900829871 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F50A40A22DE0D06900B9EDB8;
+			remoteInfo = TimerWidgetsExtension;
+		};
+		F5AEC8472EC1014F0082FBF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7555FF73242A565900829871 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5AEC8352EC1014C0082FBF0;
+			remoteInfo = TimerWidgetsExtensionExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F51D1D792EA252560030D70D /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F51D1D7A2EA252560030D70D /* TimerWidgetDev.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5AEC84E2EC1014F0082FBF0 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F5AEC8492EC1014F0082FBF0 /* TimerWidgetProd.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
+		7555FF7B242A565900829871 /* TomatoPaws.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TomatoPaws.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F50A40A32DE0D06900B9EDB8 /* TimerWidgetDev.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TimerWidgetDev.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F50A40A42DE0D06900B9EDB8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		F50A40A62DE0D06900B9EDB8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		F50A40BF2DE0D5A400B9EDB8 /* GeneratedLiveActivityBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedLiveActivityBridge.swift; sourceTree = "<group>"; };
+		F51784DC2E20027600173905 /* FirebaseAuthBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthBridge.swift; sourceTree = "<group>"; };
+		F51D1D7E2EA252560030D70D /* iosAppDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosAppDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F53B4A9F2DDA3482003E5156 /* cat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cat.wav; sourceTree = "<group>"; };
+		F57417F22E9EC72100AC6B81 /* Dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Dev.xcconfig; sourceTree = "<group>"; };
+		F57417F52E9EC75F00AC6B81 /* Prod.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Prod.xcconfig; sourceTree = "<group>"; };
+		F5AEC8232EC0EE880082FBF0 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		F5AEC8362EC1014C0082FBF0 /* TimerWidgetProd.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TimerWidgetProd.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5AED5262DF4C2FE00699B16 /* iosApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iosApp.entitlements; sourceTree = "<group>"; };
+		F5AED5272DF9A0AD00699B16 /* LiveActivityScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityScheduler.swift; sourceTree = "<group>"; };
+		F5D6AA582DDCDD550018CB41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F5D6AA5A2DDCE4B90018CB41 /* bird.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bird.wav; sourceTree = "<group>"; };
+		F5D6AA5C2DDCE4C30018CB41 /* buffalo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = buffalo.wav; sourceTree = "<group>"; };
+		F5D6AA5E2DDCE4D00018CB41 /* dog.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dog.wav; sourceTree = "<group>"; };
+		F5D6AA602DDCE4E00018CB41 /* standard.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = standard.wav; sourceTree = "<group>"; };
+		F5D6AA622DDCE4ED0018CB41 /* wolf.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wolf.wav; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F50A40B92DE0D06B00B9EDB8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F50A40A22DE0D06900B9EDB8 /* TimerWidgetDev */;
+		};
+		F5A6C3002EF97B4D00A20EAC /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				TimerWidgetsAttributes.swift,
+			);
+			target = 7555FF7A242A565900829871 /* iosApp */;
+		};
+		F5AEC82B2EC0F9E60082FBF0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Dev/GoogleService-Info.plist",
+				"Prod/GoogleService-Info.plist",
+			);
+			target = F50A40A22DE0D06900B9EDB8 /* TimerWidgetDev */;
+		};
+		F5AEC82F2EC0FABE0082FBF0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Dev/GoogleService-Info.plist",
+			);
+			target = F51D1D4E2EA252560030D70D /* iosAppDev */;
+		};
+		F5AEC8312EC0FAC60082FBF0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Prod/GoogleService-Info.plist",
+			);
+			target = 7555FF7A242A565900829871 /* iosApp */;
+		};
+		F5AEC84D2EC1014F0082FBF0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F5AEC8352EC1014C0082FBF0 /* TimerWidgetProd */;
+		};
+		F5AEC87E2EC3B53C0082FBF0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				TimerWidgetsAttributes.swift,
+				TimerWidgetsLiveActivity.swift,
+			);
+			target = F51D1D4E2EA252560030D70D /* iosAppDev */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F50A40A82DE0D06900B9EDB8 /* TimerWidgetDev */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F50A40B92DE0D06B00B9EDB8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */,
+				F5AEC87E2EC3B53C0082FBF0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */,
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = TimerWidgetDev;
+			sourceTree = "<group>";
+		};
+		F5AEC8272EC0F9B50082FBF0 /* Firebase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F5AEC8312EC0FAC60082FBF0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */,
+				F5AEC82B2EC0F9E60082FBF0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */,
+				F5AEC82F2EC0FABE0082FBF0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */,
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		F5AEC8392EC1014C0082FBF0 /* TimerWidgetProd */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F5A6C3002EF97B4D00A20EAC /* PBXFileSystemSynchronizedBuildFileExceptionSet */,
+				F5AEC84D2EC1014F0082FBF0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */,
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = TimerWidgetProd;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B92378962B6B1156000C7307 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F56658CE2DF9B000009FF2CA /* FirebaseMessaging in Frameworks */,
+				F52F0C712E250C85006E9E06 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				F51784D62E1F037600173905 /* FirebaseAuth in Frameworks */,
+				F51784DB2E1F071C00173905 /* GoogleSignInSwift in Frameworks */,
+				F56658CA2DF9B000009FF2CA /* FirebaseCore in Frameworks */,
+				F56658CC2DF9B000009FF2CA /* FirebaseFunctions in Frameworks */,
+				F51784D92E1F071C00173905 /* GoogleSignIn in Frameworks */,
+				F52F0C6F2E250C85006E9E06 /* FirebaseFirestore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F50A40A02DE0D06900B9EDB8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F57BC8032DF9B6660037CD17 /* FirebaseMessaging in Frameworks */,
+				F57BC8002DF9B6110037CD17 /* FirebaseFunctions in Frameworks */,
+				F50A40A72DE0D06900B9EDB8 /* SwiftUI.framework in Frameworks */,
+				F50A40A52DE0D06900B9EDB8 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F51D1D632EA252560030D70D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F51D1D642EA252560030D70D /* FirebaseMessaging in Frameworks */,
+				F51D1D652EA252560030D70D /* FirebaseFirestoreCombine-Community in Frameworks */,
+				F51D1D662EA252560030D70D /* FirebaseAuth in Frameworks */,
+				F51D1D672EA252560030D70D /* GoogleSignInSwift in Frameworks */,
+				F51D1D682EA252560030D70D /* FirebaseCore in Frameworks */,
+				F51D1D692EA252560030D70D /* FirebaseFunctions in Frameworks */,
+				F51D1D6A2EA252560030D70D /* GoogleSignIn in Frameworks */,
+				F51D1D6B2EA252560030D70D /* FirebaseFirestore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5AEC8332EC1014C0082FBF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5AEC8862EC3B71D0082FBF0 /* FirebaseMessaging in Frameworks */,
+				F5AEC8842EC3B7170082FBF0 /* FirebaseFunctions in Frameworks */,
+				F5AEC8382EC1014C0082FBF0 /* SwiftUI.framework in Frameworks */,
+				F5AEC8372EC1014C0082FBF0 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		058557D7273AAEEB004C7B11 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		42799AB246E5F90AF97AA0EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F50A40A42DE0D06900B9EDB8 /* WidgetKit.framework */,
+				F50A40A62DE0D06900B9EDB8 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7555FF72242A565900829871 = {
+			isa = PBXGroup;
+			children = (
+				F5AEC8272EC0F9B50082FBF0 /* Firebase */,
+				AB1DB47929225F7C00F7AF9C /* Configuration */,
+				7555FF7D242A565900829871 /* iosApp */,
+				F50A40A82DE0D06900B9EDB8 /* TimerWidgetDev */,
+				F5AEC8392EC1014C0082FBF0 /* TimerWidgetProd */,
+				7555FF7C242A565900829871 /* Products */,
+				42799AB246E5F90AF97AA0EF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7555FF7C242A565900829871 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7555FF7B242A565900829871 /* TomatoPaws.app */,
+				F50A40A32DE0D06900B9EDB8 /* TimerWidgetDev.appex */,
+				F51D1D7E2EA252560030D70D /* iosAppDev.app */,
+				F5AEC8362EC1014C0082FBF0 /* TimerWidgetProd.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7555FF7D242A565900829871 /* iosApp */ = {
+			isa = PBXGroup;
+			children = (
+				F51784DC2E20027600173905 /* FirebaseAuthBridge.swift */,
+				F5AED5272DF9A0AD00699B16 /* LiveActivityScheduler.swift */,
+				F5AED5262DF4C2FE00699B16 /* iosApp.entitlements */,
+				F50A40BF2DE0D5A400B9EDB8 /* GeneratedLiveActivityBridge.swift */,
+				F53B4A9E2DDA3438003E5156 /* NotificationSounds */,
+				058557BA273AAA24004C7B11 /* Assets.xcassets */,
+				7555FF82242A565900829871 /* ContentView.swift */,
+				7555FF8C242A565B00829871 /* Info.plist */,
+				2152FB032600AC8F00CF470E /* iOSApp.swift */,
+				058557D7273AAEEB004C7B11 /* Preview Content */,
+				F5D6AA582DDCDD550018CB41 /* AppDelegate.swift */,
+			);
+			path = iosApp;
+			sourceTree = "<group>";
+		};
+		AB1DB47929225F7C00F7AF9C /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				F5AEC8232EC0EE880082FBF0 /* Config.xcconfig */,
+				F57417F22E9EC72100AC6B81 /* Dev.xcconfig */,
+				F57417F52E9EC75F00AC6B81 /* Prod.xcconfig */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		F53B4A9E2DDA3438003E5156 /* NotificationSounds */ = {
+			isa = PBXGroup;
+			children = (
+				F53B4A9F2DDA3482003E5156 /* cat.wav */,
+				F5D6AA5A2DDCE4B90018CB41 /* bird.wav */,
+				F5D6AA5C2DDCE4C30018CB41 /* buffalo.wav */,
+				F5D6AA5E2DDCE4D00018CB41 /* dog.wav */,
+				F5D6AA602DDCE4E00018CB41 /* standard.wav */,
+				F5D6AA622DDCE4ED0018CB41 /* wolf.wav */,
+			);
+			path = NotificationSounds;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7555FF7A242A565900829871 /* iosApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7555FFA5242A565B00829871 /* Build configuration list for PBXNativeTarget "iosApp" */;
+			buildPhases = (
+				F36B1CEB2AD83DDC00CB74D5 /* Compile Kotlin Framework */,
+				7555FF77242A565900829871 /* Sources */,
+				B92378962B6B1156000C7307 /* Frameworks */,
+				7555FF79242A565900829871 /* Resources */,
+				F5AEC84E2EC1014F0082FBF0 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5AEC8482EC1014F0082FBF0 /* PBXTargetDependency */,
+			);
+			name = iosApp;
+			packageProductDependencies = (
+				F56658C92DF9B000009FF2CA /* FirebaseCore */,
+				F56658CB2DF9B000009FF2CA /* FirebaseFunctions */,
+				F56658CD2DF9B000009FF2CA /* FirebaseMessaging */,
+				F51784D52E1F037600173905 /* FirebaseAuth */,
+				F51784D82E1F071C00173905 /* GoogleSignIn */,
+				F51784DA2E1F071C00173905 /* GoogleSignInSwift */,
+				F52F0C6E2E250C85006E9E06 /* FirebaseFirestore */,
+				F52F0C702E250C85006E9E06 /* FirebaseFirestoreCombine-Community */,
+			);
+			productName = iosApp;
+			productReference = 7555FF7B242A565900829871 /* TomatoPaws.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F50A40A22DE0D06900B9EDB8 /* TimerWidgetDev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F50A40BA2DE0D06B00B9EDB8 /* Build configuration list for PBXNativeTarget "TimerWidgetDev" */;
+			buildPhases = (
+				F50A409F2DE0D06900B9EDB8 /* Sources */,
+				F50A40A02DE0D06900B9EDB8 /* Frameworks */,
+				F50A40A12DE0D06900B9EDB8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				F50A40A82DE0D06900B9EDB8 /* TimerWidgetDev */,
+				F5AEC8272EC0F9B50082FBF0 /* Firebase */,
+			);
+			name = TimerWidgetDev;
+			packageProductDependencies = (
+				F57BC7FF2DF9B6110037CD17 /* FirebaseFunctions */,
+				F57BC8022DF9B6660037CD17 /* FirebaseMessaging */,
+			);
+			productName = TimerWidgetsExtension;
+			productReference = F50A40A32DE0D06900B9EDB8 /* TimerWidgetDev.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		F51D1D4E2EA252560030D70D /* iosAppDev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F51D1D7B2EA252560030D70D /* Build configuration list for PBXNativeTarget "iosAppDev" */;
+			buildPhases = (
+				F51D1D5B2EA252560030D70D /* Compile Kotlin Framework */,
+				F51D1D5C2EA252560030D70D /* Sources */,
+				F51D1D632EA252560030D70D /* Frameworks */,
+				F51D1D6D2EA252560030D70D /* Resources */,
+				F51D1D792EA252560030D70D /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F51D1D4F2EA252560030D70D /* PBXTargetDependency */,
+			);
+			name = iosAppDev;
+			packageProductDependencies = (
+				F51D1D512EA252560030D70D /* FirebaseCore */,
+				F51D1D532EA252560030D70D /* FirebaseFunctions */,
+				F51D1D542EA252560030D70D /* FirebaseMessaging */,
+				F51D1D552EA252560030D70D /* FirebaseAuth */,
+				F51D1D562EA252560030D70D /* GoogleSignIn */,
+				F51D1D582EA252560030D70D /* GoogleSignInSwift */,
+				F51D1D592EA252560030D70D /* FirebaseFirestore */,
+				F51D1D5A2EA252560030D70D /* FirebaseFirestoreCombine-Community */,
+			);
+			productName = iosApp;
+			productReference = F51D1D7E2EA252560030D70D /* iosAppDev.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F5AEC8352EC1014C0082FBF0 /* TimerWidgetProd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5AEC84A2EC1014F0082FBF0 /* Build configuration list for PBXNativeTarget "TimerWidgetProd" */;
+			buildPhases = (
+				F5AEC8322EC1014C0082FBF0 /* Sources */,
+				F5AEC8332EC1014C0082FBF0 /* Frameworks */,
+				F5AEC8342EC1014C0082FBF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				F5AEC8392EC1014C0082FBF0 /* TimerWidgetProd */,
+			);
+			name = TimerWidgetProd;
+			packageProductDependencies = (
+				F5AEC8832EC3B7170082FBF0 /* FirebaseFunctions */,
+				F5AEC8852EC3B71D0082FBF0 /* FirebaseMessaging */,
+			);
+			productName = TimerWidgetsExtensionExtension;
+			productReference = F5AEC8362EC1014C0082FBF0 /* TimerWidgetProd.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7555FF73242A565900829871 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 2610;
+				LastUpgradeCheck = 1620;
+				ORGANIZATIONNAME = orgName;
+				TargetAttributes = {
+					7555FF7A242A565900829871 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					F50A40A22DE0D06900B9EDB8 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					F5AEC8352EC1014C0082FBF0 = {
+						CreatedOnToolsVersion = 26.1;
+					};
+				};
+			};
+			buildConfigurationList = 7555FF76242A565900829871 /* Build configuration list for PBXProject "iosApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7555FF72242A565900829871;
+			packageReferences = (
+				F56658C82DF9B000009FF2CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F51784D72E1F071C00173905 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
+			productRefGroup = 7555FF7C242A565900829871 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7555FF7A242A565900829871 /* iosApp */,
+				F50A40A22DE0D06900B9EDB8 /* TimerWidgetDev */,
+				F51D1D4E2EA252560030D70D /* iosAppDev */,
+				F5AEC8352EC1014C0082FBF0 /* TimerWidgetProd */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7555FF79242A565900829871 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F53B4AA02DDA3482003E5156 /* cat.wav in Resources */,
+				F5D6AA5B2DDCE4B90018CB41 /* bird.wav in Resources */,
+				058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */,
+				F5D6AA612DDCE4E00018CB41 /* standard.wav in Resources */,
+				F5D6AA632DDCE4ED0018CB41 /* wolf.wav in Resources */,
+				F5D6AA5F2DDCE4D00018CB41 /* dog.wav in Resources */,
+				058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */,
+				F5D6AA5D2DDCE4C30018CB41 /* buffalo.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F50A40A12DE0D06900B9EDB8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F57417F62E9EC75F00AC6B81 /* Prod.xcconfig in Resources */,
+				F593D1242DE3C19900019FCE /* Assets.xcassets in Resources */,
+				F57417F42E9EC72100AC6B81 /* Dev.xcconfig in Resources */,
+				F5AEC8252EC0EE880082FBF0 /* Config.xcconfig in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F51D1D6D2EA252560030D70D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F51D1D6F2EA252560030D70D /* cat.wav in Resources */,
+				F51D1D712EA252560030D70D /* bird.wav in Resources */,
+				F51D1D722EA252560030D70D /* Preview Assets.xcassets in Resources */,
+				F51D1D732EA252560030D70D /* standard.wav in Resources */,
+				F51D1D742EA252560030D70D /* wolf.wav in Resources */,
+				F51D1D762EA252560030D70D /* dog.wav in Resources */,
+				F51D1D772EA252560030D70D /* Assets.xcassets in Resources */,
+				F51D1D782EA252560030D70D /* buffalo.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5AEC8342EC1014C0082FBF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5AEC8892EC3B8780082FBF0 /* Prod.xcconfig in Resources */,
+				F5AEC8882EC3B8680082FBF0 /* Dev.xcconfig in Resources */,
+				F5AEC8872EC3B8630082FBF0 /* Config.xcconfig in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F36B1CEB2AD83DDC00CB74D5 /* Compile Kotlin Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Compile Kotlin Framework";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"YES\" = \"$OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED\" ]; then\n  echo \"Skipping Gradle build task invocation due to OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED environment variable set to \\\"YES\\\"\"\n  exit 0\nfi\ncd \"$SRCROOT/..\"\n./gradlew :composeApp:embedAndSignAppleFrameworkForXcode\n";
+		};
+		F51D1D5B2EA252560030D70D /* Compile Kotlin Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Compile Kotlin Framework";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"YES\" = \"$OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED\" ]; then\n  echo \"Skipping Gradle build task invocation due to OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED environment variable set to \\\"YES\\\"\"\n  exit 0\nfi\ncd \"$SRCROOT/..\"\n./gradlew :composeApp:embedAndSignAppleFrameworkForXcode\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7555FF77242A565900829871 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5AED5282DF9A0AE00699B16 /* LiveActivityScheduler.swift in Sources */,
+				F50A40C02DE0D5B900B9EDB8 /* GeneratedLiveActivityBridge.swift in Sources */,
+				F51784DE2E20028000173905 /* FirebaseAuthBridge.swift in Sources */,
+				F5D6AA592DDCDD580018CB41 /* AppDelegate.swift in Sources */,
+				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
+				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F50A409F2DE0D06900B9EDB8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F57BC8012DF9B6440037CD17 /* LiveActivityScheduler.swift in Sources */,
+				F50A40C12DE0D5E500B9EDB8 /* GeneratedLiveActivityBridge.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F51D1D5C2EA252560030D70D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F51D1D5D2EA252560030D70D /* LiveActivityScheduler.swift in Sources */,
+				F51D1D5E2EA252560030D70D /* GeneratedLiveActivityBridge.swift in Sources */,
+				F51D1D5F2EA252560030D70D /* FirebaseAuthBridge.swift in Sources */,
+				F51D1D602EA252560030D70D /* AppDelegate.swift in Sources */,
+				F51D1D612EA252560030D70D /* iOSApp.swift in Sources */,
+				F51D1D622EA252560030D70D /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5AEC8322EC1014C0082FBF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5AEC8812EC3B6600082FBF0 /* GeneratedLiveActivityBridge.swift in Sources */,
+				F5AEC8822EC3B6C00082FBF0 /* LiveActivityScheduler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F51D1D4F2EA252560030D70D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F50A40A22DE0D06900B9EDB8 /* TimerWidgetDev */;
+			targetProxy = F51D1D502EA252560030D70D /* PBXContainerItemProxy */;
+		};
+		F5AEC8482EC1014F0082FBF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5AEC8352EC1014C0082FBF0 /* TimerWidgetProd */;
+			targetProxy = F5AEC8472EC1014F0082FBF0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7555FFA3242A565B00829871 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5AEC8232EC0EE880082FBF0 /* Config.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7555FFA4242A565B00829871 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5AEC8232EC0EE880082FBF0 /* Config.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7555FFA6242A565B00829871 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F57417F52E9EC75F00AC6B81 /* Prod.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iosApp/iosApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
+				DEVELOPMENT_TEAM = "${TEAM_ID}";
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)\n$(SRCROOT)/../composeApp/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
+				);
+				INFOPLIST_FILE = iosApp/Info.plist;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = org.KittydoroTimer;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = org.KittydoroTimer;
+				PRODUCT_NAME = "${APP_NAME}";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7555FFA7242A565B00829871 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F57417F52E9EC75F00AC6B81 /* Prod.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iosApp/iosApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
+				DEVELOPMENT_TEAM = RD5S4N6NF9;
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)\n$(SRCROOT)/../composeApp/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
+				);
+				INFOPLIST_FILE = iosApp/Info.plist;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = org.KittydoroTimer;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = org.KittydoroTimer;
+				PRODUCT_NAME = "${APP_NAME}";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F50A40BB2DE0D06B00B9EDB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F57417F52E9EC75F00AC6B81 /* Prod.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = RD5S4N6NF9;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TimerWidgetDev/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TimerWidgetDev;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 orgName. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.timer.PomodoroTimer.dev.TimerWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F50A40BC2DE0D06B00B9EDB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F57417F52E9EC75F00AC6B81 /* Prod.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RD5S4N6NF9;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TimerWidgetDev/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TimerWidgetDev;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 orgName. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.timer.PomodoroTimer.dev.TimerWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F51D1D7C2EA252560030D70D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F57417F22E9EC72100AC6B81 /* Dev.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iosApp/iosApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
+				DEVELOPMENT_TEAM = "${TEAM_ID}";
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)\n$(SRCROOT)/../composeApp/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
+				);
+				INFOPLIST_FILE = iosApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "${BUNDLE_ID}";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = org.timer.PomodoroTimer.dev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F51D1D7D2EA252560030D70D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F57417F22E9EC72100AC6B81 /* Dev.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iosApp/iosApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
+				DEVELOPMENT_TEAM = RD5S4N6NF9;
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)\n$(SRCROOT)/../composeApp/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
+				);
+				INFOPLIST_FILE = iosApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "${BUNDLE_ID}";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = org.timer.PomodoroTimer.dev;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F5AEC84B2EC1014F0082FBF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = RD5S4N6NF9;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TimerWidgetProd/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TimerWidgetProd;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 orgName. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.KittydoroTimer.TimerWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F5AEC84C2EC1014F0082FBF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RD5S4N6NF9;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TimerWidgetProd/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TimerWidgetProd;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 orgName. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.KittydoroTimer.TimerWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7555FF76242A565900829871 /* Build configuration list for PBXProject "iosApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7555FFA3242A565B00829871 /* Debug */,
+				7555FFA4242A565B00829871 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7555FFA5242A565B00829871 /* Build configuration list for PBXNativeTarget "iosApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7555FFA6242A565B00829871 /* Debug */,
+				7555FFA7242A565B00829871 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F50A40BA2DE0D06B00B9EDB8 /* Build configuration list for PBXNativeTarget "TimerWidgetDev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F50A40BB2DE0D06B00B9EDB8 /* Debug */,
+				F50A40BC2DE0D06B00B9EDB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F51D1D7B2EA252560030D70D /* Build configuration list for PBXNativeTarget "iosAppDev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F51D1D7C2EA252560030D70D /* Debug */,
+				F51D1D7D2EA252560030D70D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5AEC84A2EC1014F0082FBF0 /* Build configuration list for PBXNativeTarget "TimerWidgetProd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5AEC84B2EC1014F0082FBF0 /* Debug */,
+				F5AEC84C2EC1014F0082FBF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F51784D72E1F071C00173905 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		F51D1D522EA252560030D70D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.14.0;
+			};
+		};
+		F51D1D572EA252560030D70D /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		F56658C82DF9B000009FF2CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.14.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F51784D52E1F037600173905 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F56658C82DF9B000009FF2CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		F51784D82E1F071C00173905 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F51784D72E1F071C00173905 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		F51784DA2E1F071C00173905 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F51784D72E1F071C00173905 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		F51D1D512EA252560030D70D /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F51D1D522EA252560030D70D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		F51D1D532EA252560030D70D /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F51D1D522EA252560030D70D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		F51D1D542EA252560030D70D /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F51D1D522EA252560030D70D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		F51D1D552EA252560030D70D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F51D1D522EA252560030D70D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		F51D1D562EA252560030D70D /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F51D1D572EA252560030D70D /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		F51D1D582EA252560030D70D /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F51D1D572EA252560030D70D /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		F51D1D592EA252560030D70D /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F51D1D522EA252560030D70D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		F51D1D5A2EA252560030D70D /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F51D1D522EA252560030D70D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		F52F0C6E2E250C85006E9E06 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F56658C82DF9B000009FF2CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		F52F0C702E250C85006E9E06 /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F56658C82DF9B000009FF2CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		F56658C92DF9B000009FF2CA /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F56658C82DF9B000009FF2CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		F56658CB2DF9B000009FF2CA /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F56658C82DF9B000009FF2CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		F56658CD2DF9B000009FF2CA /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F56658C82DF9B000009FF2CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		F57BC7FF2DF9B6110037CD17 /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F56658C82DF9B000009FF2CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		F57BC8022DF9B6660037CD17 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F56658C82DF9B000009FF2CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		F5AEC8832EC3B7170082FBF0 /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F56658C82DF9B000009FF2CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		F5AEC8852EC3B71D0082FBF0 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F56658C82DF9B000009FF2CA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 7555FF73242A565900829871 /* Project object */;
+}

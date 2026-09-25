@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1011842943959",
+    "project_id": "tomatopawsdev",
+    "storage_bucket": "tomatopawsdev.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011842943959:android:26b2bb83675e0e30afd992",
+        "android_client_info": {
+          "package_name": "org.timer.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1011842943959-fdl86mqs4d8r7uhk997qp4q3rpsfpu18.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBva_M6F1Vx1YhmUIcJP_4PrN6tk2WMcO0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1011842943959-fdl86mqs4d8r7uhk997qp4q3rpsfpu18.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

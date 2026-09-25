@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">My awesome app</string>
+    <string name="time">%02$d:%02$d</string>
+</resources>

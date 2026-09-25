@@ -1,0 +1,4 @@
+#include "Config.xcconfig"
+
+APP_NAME = TomatoPaws
+BUNDLE_ID = org.KittydoroTimer
