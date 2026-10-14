@@ -20,12 +20,14 @@ import org.timer.main.domain.game.*
 import org.timer.main.domain.project.*
 import org.timer.main.domain.settings.*
 import org.timer.main.domain.statistic.*
+import org.timer.main.domain.summary.*
 import org.timer.main.domain.team.*
 import org.timer.main.domain.timer.*
 import org.timer.main.progress.header.*
 import org.timer.main.projects.*
 import org.timer.main.settings.*
 import org.timer.main.statistic.*
+import org.timer.main.summary.*
 import org.timer.main.timer.*
 import org.timer.main.feedback.*
 import org.timer.main.team.activity.*
@@ -50,6 +52,7 @@ fun appModule() = module {
     viewModelOf(::FeedbackViewModel)
     viewModelOf(::PlotViewModel)
     viewModelOf(::TeamActivityViewModel)
+    viewModelOf(::DailySummaryViewModel)
 
     //UseCases
     factoryOf(::GetProjectsUseCase)
@@ -102,6 +105,8 @@ fun appModule() = module {
     factory<GetMonthlyExerciseStatsUseCase> { DefaultGetMonthlyExerciseStatsUseCase(get()) }
     factory<GetWeeklyTaskStatsUseCase> { DefaultGetWeeklyTaskStatsUseCase(get()) }
     factory<GetMonthlyTaskStatsUseCase> { DefaultGetMonthlyTaskStatsUseCase(get()) }
+    factory<GetTodayActivityUseCase> { DefaultGetTodayActivityUseCase(get(), get(), get()) }
+    factory<GenerateDailySummaryUseCase> { DefaultGenerateDailySummaryUseCase(get()) }
 
     //infrastructure
     factoryOf<SystemClock>(::DefaultSystemClock)

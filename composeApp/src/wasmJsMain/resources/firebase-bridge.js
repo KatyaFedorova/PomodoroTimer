@@ -41,6 +41,9 @@ let timerListenerCounter = 0;
 const teamListeners = new Map();
 let teamListenerCounter = 0;
 
+const eventsListeners = new Map();
+let eventsListenerCounter = 0;
+
 function getUserId() {
     const user = auth.currentUser;
     if (!user) {
@@ -954,11 +957,12 @@ listenToEventsInRange: (fromMillis, toMillis, kotlinCallback) => {
             where("timestamp", "<",  toTs)
         );
 
-        const listenerId = `eventsListener_${Date.now()}`;
+        const listenerId = `eventsListener_${eventsListenerCounter++}`;
         const unsubscribe = onSnapshot(q, (snapshot) => {
             const events = [];
             snapshot.forEach(doc => {
-                const data = doc.data();
+                // "estimate": a just-saved event gets a local timestamp until the server confirms it
+                const data = doc.data({ serverTimestamps: "estimate" });
                 let ts = data.timestamp;
                 if (ts && typeof ts.toMillis === "function") {
                     ts = ts.toMillis();
@@ -977,7 +981,7 @@ listenToEventsInRange: (fromMillis, toMillis, kotlinCallback) => {
             kotlinCallback("[]");
         });
 
-        teamListeners.set(listenerId, unsubscribe);
+        eventsListeners.set(listenerId, unsubscribe);
         return listenerId;
     } catch (error) {
         console.error("[Firebase] listenToEventsInRange setup error:", error);
@@ -986,10 +990,10 @@ listenToEventsInRange: (fromMillis, toMillis, kotlinCallback) => {
 },
 
     removeEventsListener: (listenerId) => {
-        const unsubscribe = projectListeners.get(listenerId);
+        const unsubscribe = eventsListeners.get(listenerId);
         if (unsubscribe) {
             unsubscribe();
-            projectListeners.delete(listenerId);
+            eventsListeners.delete(listenerId);
             }
         },
         

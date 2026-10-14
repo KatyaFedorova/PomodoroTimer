@@ -16,6 +16,7 @@ import org.timer.main.breakactivity.*
 import org.timer.main.progress.header.*
 import org.timer.main.projects.*
 import org.timer.main.statistic.*
+import org.timer.main.summary.*
 import org.timer.main.team.activity.*
 import org.timer.main.timer.*
 
@@ -92,11 +93,12 @@ private fun MainScreen(
     }
 
     Scaffold(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize(),
+        topBar = { DailySummaryBar() }
     ) { innerPadding ->
 
         Row(
-            modifier = Modifier.background(
+            modifier = Modifier.padding(innerPadding).background(
                 MaterialTheme.colorScheme.surfaceColorAtElevation(3.dp)
             )
         ) {
