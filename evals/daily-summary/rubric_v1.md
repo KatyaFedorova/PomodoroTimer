@@ -1,6 +1,8 @@
-# "Praise me" daily summary: eval rubric
+# "Praise me" daily summary: eval rubric v1
 
-Source: `TP Evaluation` → `criterias` sheet (Google Drive). Golden cases: `golden_dataset.jsonl`
+**Version:** v1 (2026-10-15) · see `CHANGELOG.md`
+
+Source: `TP Evaluation` → `criterias` sheet (Google Drive). Golden cases: `golden_dataset_v1.jsonl`
 (from `TEMP golden set import`, GS-01…GS-20). Runner: `run_eval.py`.
 
 ## Criteria
