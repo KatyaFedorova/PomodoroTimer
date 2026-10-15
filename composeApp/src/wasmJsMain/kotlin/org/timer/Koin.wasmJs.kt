@@ -8,5 +8,5 @@ import org.timer.main.timer.*
 actual fun platformSpecificModule(): Module= module {
     single<AlarmPlayer> { DefaultAlarmPlayer() }
     factory<MobileAlarm> { DefaultMobileAlarm() }
-    single<SummaryGateway> { OllamaSummaryGateway() }
+    single<SummaryGateway> { FirebaseSummaryGateway() }
 }

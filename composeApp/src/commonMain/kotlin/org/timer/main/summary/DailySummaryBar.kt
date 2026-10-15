@@ -78,7 +78,7 @@ private fun DailySummaryDialog(
                         Text("Writing your summary…")
                     }
                     viewState.error != null -> Text(
-                        text = "Couldn't reach the local AI model (Ollama). Make sure it is running.\n${viewState.error}",
+                        text = "Couldn't get your summary right now.\n${viewState.error}",
                         color = MaterialTheme.colorScheme.error,
                     )
                     viewState.summary != null -> Text(

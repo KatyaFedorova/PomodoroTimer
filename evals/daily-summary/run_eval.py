@@ -1,46 +1,46 @@
 """Eval for the "Praise me" daily summary. See rubric_v1.md for the criteria.
 
-Generates a summary for every case in the golden dataset (DATASET) the same way the app does
-(prompt mirrored from GenerateDailySummaryUseCase.kt, model from OllamaSummaryGateway.kt),
-then scores it with deterministic checks and deepEval LLM-as-a-judge metrics.
+Generates a summary for every case in the golden dataset (DATASET) the same way production does
+(system prompt from functions/prompts, user prompt mirrored from GenerateDailySummaryUseCase.kt,
+model and prompt layout from functions/src/index.ts), then scores it with deterministic checks
+and deepEval LLM-as-a-judge metrics. All models are open source and free-tier.
 
 Setup:
-    pip install deepeval
-    ollama pull llama3.2:3b          # model under test (same as the app)
-    ollama pull qwen2.5:7b           # judge; a judge should be stronger than the model it grades
+    pip install deepeval litellm
+    export GOOGLE_API_KEY=...   # Google AI Studio key, project WITHOUT billing (free tier): generator
+    export GROQ_API_KEY=...     # Groq free tier: judge
 
 Usage:
-    python run_eval.py                       # full run
-    python run_eval.py --no-judge            # deterministic checks only (fast, no deepEval needed)
-    python run_eval.py --cases GS-03,GS-06   # subset
-    python run_eval.py --prompt payload      # send the golden set's payload (adds local time + focus minutes)
+    python run_eval.py                          # Gemma generator + Groq gpt-oss-120b judge
+    python run_eval.py --no-judge               # deterministic checks only (no deepEval/Groq needed)
+    python run_eval.py --cases GS-03,GS-06      # subset
+    python run_eval.py --prompt payload         # send the golden set's payload (adds local time + focus minutes)
 """
 import argparse
 import json
+import os
 import re
+import sys
 import time
 import urllib.request
 from datetime import datetime
 from pathlib import Path
 
 HERE = Path(__file__).parent
-OLLAMA_URL = "http://localhost:11434"
-MODEL_UNDER_TEST = "llama3.2:3b"   # OllamaSummaryGateway.DEFAULT_MODEL
-DEFAULT_JUDGE = "qwen2.5:7b"
+GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models"
+SUMMARY_MODEL = "gemma-4-26b-a4b-it"           # functions/src/index.ts SUMMARY_MODEL (production)
+DEFAULT_JUDGE = "groq/openai/gpt-oss-120b"     # LiteLLM name for Groq free tier; different family from Gemma
+JUDGE_PAUSE_S = float(os.environ.get("JUDGE_PAUSE_S", "20"))  # Groq free tier: ~8k tokens/minute
+PROMPT_FILE = HERE.parent.parent / "functions" / "prompts" / "daily_summary_system_v1.txt"
 DATASET = "golden_dataset_v1.jsonl"  # bump when a new dataset version is added
 MAX_WORDS = 60
 RESPONSE_TIME_TARGET_S = 3.0
 
+SYSTEM_PROMPT = PROMPT_FILE.read_text(encoding="utf-8").strip()  # same file the Cloud Function uses
+
 # ---- Mirror of GenerateDailySummaryUseCase.kt: keep in sync when the app prompt changes ----
 SENTENCES = 5
 MAX_DONE_TASKS_PER_PROJECT = 5
-SYSTEM_PROMPT = f"""You are a warm, upbeat coach inside "TomatoPaws", a cat-themed Pomodoro focus app.
-Write exactly {SENTENCES} short sentences that celebrate what the person did today.
-Mention their focus sessions, finished tasks and projects, and the physical or mindful
-activities they did during breaks. Use the real numbers from the stats.
-Only praise things listed under "Done today". Never say the person did something listed
-under "Not done yet today"; gently encourage one of those for next time instead.
-Plain text only: no lists, no numbering, no headings, no quotes around the answer."""
 
 
 def build_app_user_prompt(i):
@@ -78,15 +78,17 @@ def take_sentences(text, count=SENTENCES):
 
 
 def generate(user_prompt):
+    # Same layout as buildPrompt() in functions/src/index.ts: system prompt first in the user turn.
     body = json.dumps({
-        "model": MODEL_UNDER_TEST, "stream": False,
-        "messages": [{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": user_prompt}],
-        "options": {"temperature": 0.7},
+        "contents": [{"role": "user", "parts": [{"text": f"{SYSTEM_PROMPT}\n\n{user_prompt}"}]}],
+        "generationConfig": {"temperature": 0.7, "maxOutputTokens": 400},
     }).encode()
-    req = urllib.request.Request(f"{OLLAMA_URL}/api/chat", body, {"Content-Type": "application/json"})
+    req = urllib.request.Request(f"{GEMINI_URL}/{SUMMARY_MODEL}:generateContent", body,
+                                 {"Content-Type": "application/json", "x-goog-api-key": os.environ["GOOGLE_API_KEY"]})
     started = time.perf_counter()
-    with urllib.request.urlopen(req, timeout=300) as response:
-        content = json.load(response)["message"]["content"]
+    with urllib.request.urlopen(req, timeout=120) as response:
+        parts = json.load(response)["candidates"][0]["content"]["parts"]
+    content = "".join(p.get("text", "") for p in parts if not p.get("thought"))
     return take_sentences(content), round(time.perf_counter() - started, 2)
 
 
@@ -105,10 +107,10 @@ def deterministic_checks(case, output, seconds):
 
 def build_judge_metrics(judge_model):
     from deepeval.metrics import GEval
-    from deepeval.models import OllamaModel
+    from deepeval.models import LiteLLMModel
     from deepeval.test_case import LLMTestCaseParams
 
-    judge = OllamaModel(model=judge_model, base_url=OLLAMA_URL, temperature=0)
+    judge = LiteLLMModel(model=judge_model, temperature=0)  # LiteLLM reads GROQ_API_KEY
     params = [LLMTestCaseParams.INPUT, LLMTestCaseParams.ACTUAL_OUTPUT, LLMTestCaseParams.EXPECTED_OUTPUT]
     # threshold is on deepEval's 0..1 scale; score_1_to_5 = 1 + 4 * score
     return {
@@ -165,7 +167,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--cases", help="comma-separated case ids, e.g. GS-03,GS-06")
     parser.add_argument("--no-judge", action="store_true", help="skip deepEval LLM-as-a-judge metrics")
-    parser.add_argument("--judge-model", default=DEFAULT_JUDGE)
+    parser.add_argument("--judge-model", default=DEFAULT_JUDGE, help="LiteLLM model name of the judge")
     parser.add_argument("--prompt", choices=["app", "payload"], default="app",
                         help="app: exact prompt the app sends today; payload: the golden set's payload text")
     args = parser.parse_args()
@@ -185,6 +187,7 @@ def main():
             run = {"output": output, **deterministic_checks(case, output, seconds)}
             if metrics:
                 run["judge"] = judge(metrics, case, output)
+                time.sleep(JUDGE_PAUSE_S)  # stay under Groq's free-tier tokens-per-minute limit
             runs.append(run)
         openings = [first_words(r["output"]) for r in runs]
         diverse = len(set(openings)) == len(openings) if len(runs) > 1 else None
@@ -200,7 +203,8 @@ def main():
     out_dir.mkdir(exist_ok=True)
     out_file = out_dir / f"{datetime.now():%Y%m%d-%H%M%S}-{args.prompt}.json"
     out_file.write_text(json.dumps({
-        "dataset": DATASET, "model": MODEL_UNDER_TEST, "judge": None if args.no_judge else args.judge_model,
+        "dataset": DATASET, "prompt_file": PROMPT_FILE.name, "model": SUMMARY_MODEL,
+        "judge": None if args.no_judge else args.judge_model,
         "passed": sum(r["passed"] for r in results), "total": len(results), "cases": results,
     }, ensure_ascii=False, indent=2))
     all_runs = [run for r in results for run in r["runs"]]
@@ -208,6 +212,7 @@ def main():
           f"<=60 words: {sum(run['max_60_words'] for run in all_runs)}/{len(all_runs)}  |  "
           f"<3s: {sum(run['response_time_ok'] for run in all_runs)}/{len(all_runs)}")
     print(f"Saved {out_file.relative_to(HERE)}")
+    sys.exit(0 if all(r["passed"] for r in results) else 1)  # CI fails when any hard gate fails
 
 
 if __name__ == "__main__":
