@@ -41,7 +41,7 @@ fun DailySummaryBar(
             Button(onClick = viewModel::onSummaryClick) {
                 Icon(Icons.Filled.AutoAwesome, contentDescription = null, modifier = Modifier.size(18.dp))
                 Spacer(Modifier.width(8.dp))
-                Text("Today's summary")
+                Text("Praise me")
             }
         }
     }
