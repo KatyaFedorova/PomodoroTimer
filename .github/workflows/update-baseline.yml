@@ -1,0 +1,49 @@
+name: Update eval baseline
+
+# Run manually on a PR branch (never main) to accept the latest eval run of that branch as the new
+# baseline, e.g. after a rubric/golden-set version change or an intended quality improvement.
+# Uses the results already produced by "Eval daily summary" on the branch: no new eval run, no quota.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  update:
+    if: github.ref != 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download the branch's latest eval results
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          run_id=$(gh run list --workflow eval.yml --branch "${{ github.ref_name }}" --status completed \
+                   --limit 20 --json databaseId,conclusion \
+                   --jq '[.[] | select(.conclusion=="success" or .conclusion=="failure")][0].databaseId')
+          if [ -z "$run_id" ]; then echo "::error::No finished eval run on this branch yet."; exit 1; fi
+          gh run download "$run_id" --name eval-results --dir evals/daily-summary/results
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Write baseline.json
+        working-directory: evals/daily-summary
+        run: python make_baseline.py --latest
+
+      - name: Commit and re-check the PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add evals/daily-summary/baseline.json
+          git commit -m "[baseline] Update eval baseline from latest eval run"
+          git push
+          # Pushes made with the workflow token don't trigger PR workflows, so start the merge gate
+          # check for the new commit explicitly (it passes without re-running the eval).
+          gh workflow run eval.yml --ref "${{ github.ref_name }}"

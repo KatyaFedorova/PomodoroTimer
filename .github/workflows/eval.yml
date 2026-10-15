@@ -1,43 +1,116 @@
 name: Eval daily summary
 
-# Runs only when the summary prompt, model or eval changes, to save free-tier quota.
+# Merge gate for pull requests into main. When a PR changes the summary prompt, model, rubric,
+# golden set or eval code, it runs the golden set and compares the result with baseline.json.
+# Drafts are skipped (drafts can't merge): mark the PR "Ready for review" to run the eval.
+# Branch protection on main should require the "Golden set eval" check.
 on:
   pull_request:
-    paths:
-      - "functions/**"
-      - "evals/daily-summary/**"
-      - "composeApp/src/commonMain/kotlin/org/timer/main/domain/summary/**"
+    branches: [main]
+    types: [opened, reopened, synchronize, ready_for_review]
   workflow_dispatch:
 
 permissions:
   contents: read
+  pull-requests: write
+
+concurrency:
+  group: eval-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   eval:
+    name: Golden set eval
+    if: github.event_name == 'workflow_dispatch' || !github.event.pull_request.draft
     runs-on: ubuntu-latest
-    timeout-minutes: 45
-    # Secrets aren't available to pull requests from forks; skip instead of failing.
-    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: evals/daily-summary
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Decide whether the eval is needed
+        id: decide
+        working-directory: .
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            base="origin/main"
+          else
+            base="origin/${{ github.base_ref }}"
+          fi
+          changed=$(git diff --name-only "$base"...HEAD)
+          echo "Changed files:"; echo "$changed"
+          last_msg=$(git log -1 --format=%s)
+          last_files=$(git diff --name-only HEAD~1 HEAD)
+          if [[ "$last_msg" == "[baseline]"* && "$last_files" == "evals/daily-summary/baseline.json" ]]; then
+            # Baseline commit made by update-baseline.yml from the previous commit's eval results.
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "Baseline update from an already-evaluated run: nothing to re-evaluate." >> "$GITHUB_STEP_SUMMARY"
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ] || echo "$changed" | grep -qE \
+            '^(functions/|evals/daily-summary/|composeApp/src/commonMain/kotlin/org/timer/main/domain/summary/|\.github/workflows/eval\.yml)'; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "No prompt, model, rubric, golden set or eval changes: eval not needed." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Check API keys
+        if: steps.decide.outputs.run == 'true'
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: |
+          if [ -z "$GOOGLE_API_KEY" ] || [ -z "$GROQ_API_KEY" ]; then
+            echo "::error::GOOGLE_API_KEY / GROQ_API_KEY secrets are missing (or this PR comes from a fork)."
+            exit 1
+          fi
 
       - uses: actions/setup-python@v5
+        if: steps.decide.outputs.run == 'true'
         with:
           python-version: "3.12"
 
       - name: Install deepEval
+        if: steps.decide.outputs.run == 'true'
         run: pip install deepeval litellm
 
-      - name: Run eval
-        working-directory: evals/daily-summary
+      - name: Run golden set
+        if: steps.decide.outputs.run == 'true'
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-        run: python run_eval.py
+        # run_eval.py exits 1 when hard gates fail; the baseline comparison below decides instead.
+        run: python run_eval.py || true
+
+      - name: Compare with baseline
+        id: compare
+        if: steps.decide.outputs.run == 'true'
+        run: |
+          set +e
+          python compare_baseline.py --latest --out comparison.md
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          cat comparison.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Comment on the pull request
+        if: steps.decide.outputs.run == 'true' && github.event_name == 'pull_request' && always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr comment ${{ github.event.pull_request.number }} --body-file comparison.md
 
       - name: Upload results
-        if: always()
+        if: steps.decide.outputs.run == 'true' && always()
         uses: actions/upload-artifact@v4
         with:
           name: eval-results
           path: evals/daily-summary/results/
+
+      - name: Block merge on regression
+        if: steps.decide.outputs.run == 'true'
+        run: |
+          if [ "${{ steps.compare.outputs.code }}" != "0" ]; then
+            echo "::error::Golden set regressed against baseline.json (see the PR comment)."
+            exit 1
+          fi
