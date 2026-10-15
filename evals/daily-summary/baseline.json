@@ -1,0 +1,225 @@
+{
+  "created": "2026-10-15 18:32 +08:00",
+  "note": "First single-judge baseline. Compare every later run against this. Earlier two-judge numbers are not comparable and are not used.",
+  "run": {
+    "results_file": "results/20261015-182423-app.json",
+    "summaries_file": "results/20261015-144642-app-summaries.jsonl",
+    "rubric_version": "v3 · 2026-10-15 18:24 +08:00",
+    "dataset_version": "v1 · 2026-10-15 11:16 +08:00",
+    "summary_model": "gemma-4-26b-a4b-it",
+    "judge": "groq/openai/gpt-oss-120b",
+    "prompt_file": "daily_summary_system_v1.txt",
+    "prompt_mode": "app"
+  },
+  "scores_1_to_5": {
+    "accuracy": 1.46,
+    "motivating_fun": 2.46,
+    "time_appropriate": 1.48,
+    "diversity": 2.2
+  },
+  "targets_1_to_5": {
+    "accuracy": 4,
+    "motivating_fun": 4,
+    "time_appropriate": 3,
+    "diversity": 3
+  },
+  "pass_counts": {
+    "hard_gates": "0/20",
+    "accuracy": "0/20",
+    "motivating_fun": "0/20",
+    "time_appropriate": "1/20",
+    "max_60_words": "1/20",
+    "under_3s": "6/20"
+  },
+  "word_count": {
+    "median": 74.5,
+    "max": 83
+  },
+  "response_time_s": {
+    "median": 3.145,
+    "max": 4.34
+  },
+  "diversity_reason": "The list shows many repeated openings such as “You did a purr‑fect job…”, “You were a superstar…”, and “Welcome to TomatoPaws…”, and it repeatedly uses phrases like “Maybe next time you can…”. The sentence pattern (praise → achievement details → encouragement) is largely the same across entries, indicating a repetitive, similar structure rather than varied language. This aligns with a score of 3 for repetitive, similar structure.",
+  "cases": [
+    {
+      "id": "GS-01",
+      "scenario": "Empty morning",
+      "passed": false,
+      "words": 80,
+      "accuracy": 1.4,
+      "motivating_fun": 2.6,
+      "time_appropriate": 3.0
+    },
+    {
+      "id": "GS-02",
+      "scenario": "Empty evening",
+      "passed": false,
+      "words": 67,
+      "accuracy": 2.2,
+      "motivating_fun": 1.4,
+      "time_appropriate": 1.4
+    },
+    {
+      "id": "GS-03",
+      "scenario": "Focus only, midday",
+      "passed": false,
+      "words": 60,
+      "accuracy": 1.4,
+      "motivating_fun": 2.6,
+      "time_appropriate": 1.4
+    },
+    {
+      "id": "GS-04",
+      "scenario": "Breaks only",
+      "passed": false,
+      "words": 75,
+      "accuracy": 1.4,
+      "motivating_fun": 2.6,
+      "time_appropriate": 1.4
+    },
+    {
+      "id": "GS-05",
+      "scenario": "Tasks without focus sessions",
+      "passed": false,
+      "words": 65,
+      "accuracy": 1.4,
+      "motivating_fun": 2.6,
+      "time_appropriate": 1.4
+    },
+    {
+      "id": "GS-06",
+      "scenario": "Original rubric bug",
+      "passed": false,
+      "words": 64,
+      "accuracy": 1.4,
+      "motivating_fun": 2.6,
+      "time_appropriate": 1.4
+    },
+    {
+      "id": "GS-07",
+      "scenario": "Small day, early afternoon",
+      "passed": false,
+      "words": 69,
+      "accuracy": 1.4,
+      "motivating_fun": 2.6,
+      "time_appropriate": 1.4
+    },
+    {
+      "id": "GS-08",
+      "scenario": "Productive evening",
+      "passed": false,
+      "words": 83,
+      "accuracy": 1.4,
+      "motivating_fun": 2.6,
+      "time_appropriate": 1.4
+    },
+    {
+      "id": "GS-09",
+      "scenario": "Marathon day",
+      "passed": false,
+      "words": 81,
+      "accuracy": 1.4,
+      "motivating_fun": 2.6,
+      "time_appropriate": 1.4
+    },
+    {
+      "id": "GS-10",
+      "scenario": "Late night",
+      "passed": false,
+      "words": 80,
+      "accuracy": 1.4,
+      "motivating_fun": 2.6,
+      "time_appropriate": 1.4
+    },
+    {
+      "id": "GS-11",
+      "scenario": "Singular everything",
+      "passed": false,
+      "words": 72,
+      "accuracy": 1.8,
+      "motivating_fun": 2.6,
+      "time_appropriate": 1.4
+    },
+    {
+      "id": "GS-12",
+      "scenario": "Active but no tasks done",
+      "passed": false,
+      "words": 77,
+      "accuracy": 1.4,
+      "motivating_fun": 3.4,
+      "time_appropriate": 1.4
+    },
+    {
+      "id": "GS-13",
+      "scenario": "Prompt injection in task name",
+      "passed": false,
+      "words": 68,
+      "accuracy": 1.4,
+      "motivating_fun": 2.2,
+      "time_appropriate": 1.4
+    },
+    {
+      "id": "GS-14",
+      "scenario": "Non-English task names",
+      "passed": false,
+      "words": 82,
+      "accuracy": 1.4,
+      "motivating_fun": 2.6,
+      "time_appropriate": 1.4
+    },
+    {
+      "id": "GS-15",
+      "scenario": "Many projects",
+      "passed": false,
+      "words": 81,
+      "accuracy": 1.4,
+      "motivating_fun": 2.2,
+      "time_appropriate": 1.4
+    },
+    {
+      "id": "GS-16",
+      "scenario": "Early bird",
+      "passed": false,
+      "words": 75,
+      "accuracy": 1.4,
+      "motivating_fun": 2.2,
+      "time_appropriate": 1.4
+    },
+    {
+      "id": "GS-17",
+      "scenario": "Everything finished",
+      "passed": false,
+      "words": 77,
+      "accuracy": 1.4,
+      "motivating_fun": 2.2,
+      "time_appropriate": 1.4
+    },
+    {
+      "id": "GS-18",
+      "scenario": "Long task name + emoji",
+      "passed": false,
+      "words": 62,
+      "accuracy": 1.4,
+      "motivating_fun": 2.2,
+      "time_appropriate": 1.4
+    },
+    {
+      "id": "GS-19",
+      "scenario": "Inconsistent data",
+      "passed": false,
+      "words": 70,
+      "accuracy": 1.4,
+      "motivating_fun": 2.6,
+      "time_appropriate": 1.4
+    },
+    {
+      "id": "GS-20",
+      "scenario": "No breaks, heavy focus",
+      "passed": false,
+      "words": 74,
+      "accuracy": 1.4,
+      "motivating_fun": 2.2,
+      "time_appropriate": 1.4
+    }
+  ]
+}

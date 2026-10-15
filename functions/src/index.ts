@@ -61,7 +61,8 @@ async function callGemma(prompt: string, apiKey: string): Promise<string> {
       headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey },
       body: JSON.stringify({
         contents: [{ role: "user", parts: [{ text: prompt }] }],
-        generationConfig: { temperature: 0.7, maxOutputTokens: 400 },
+        // minimal thinking: otherwise Gemma 4 can spend all output tokens on hidden reasoning and return nothing
+        generationConfig: { temperature: 0.7, maxOutputTokens: 400, thinkingConfig: { thinkingLevel: "minimal" } },
       }),
     },
   );

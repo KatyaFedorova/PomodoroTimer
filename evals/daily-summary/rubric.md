@@ -1,8 +1,8 @@
-# "Praise me" daily summary: eval rubric v1
+# "Praise me" daily summary: eval rubric
 
-**Version:** v1 (2026-10-15) · see `CHANGELOG.md`
+**Version:** v3 · 2026-10-15 18:24 +08:00 · history in `CHANGELOG.md` and git
 
-Source: `TP Evaluation` → `criterias` sheet (Google Drive). Golden cases: `golden_dataset_v1.jsonl`
+Source: `TP Evaluation` → `criterias` sheet (Google Drive). Golden cases: `golden_dataset.jsonl`
 (from `TEMP golden set import`, GS-01…GS-20). Runner: `run_eval.py`.
 
 ## Criteria
@@ -11,11 +11,15 @@ Source: `TP Evaluation` → `criterias` sheet (Google Drive). Golden cases: `gol
 |---|---|---|---|---|
 | 1 | Completeness & accuracy | **hard** | LLM-as-a-judge | score ≥ 4 *(proposed)* |
 | 2 | Motivating, fun & encouraging | **hard** | LLM-as-a-judge | score ≥ 4 *(proposed)* |
-| 3 | Not more than 60 words | soft | deterministic | `words ≤ 60` |
+| 3 | Not more than 60 words | soft | deterministic (Python) | `words ≤ 60` |
 | 4 | Time-appropriate | soft | LLM-as-a-judge | score ≥ 3 *(proposed)* |
-| 5 | Diverse language & structure | soft | deterministic (across runs) | GS-16 run 5×: no two runs share the same first 3 words |
-| — | Banned phrases | **hard** | deterministic | none of the case's `banned_phrases` appear |
+| 5 | Diverse language & structure | soft | LLM-as-a-judge, once per run over all summaries | score ≥ 3 *(proposed)* |
 | — | Response time | tracked | deterministic | target < 3 s (from `scenarious` sheet; not gated yet) |
+
+**Judge:** deepEval `GEval` with one model, `gpt-oss-120b` on Groq's free tier, for every
+criterion, so scores are comparable across cases and runs. Diversity is judged after the
+per-case criteria. Summaries come from
+`gemma-4-26b-a4b-it` (production model).
 
 A case **passes** when every hard gate passes. Soft criteria are reported, not gated.
 The "pass" column in the sheet is empty, so the thresholds marked *(proposed)* are my suggestion.
@@ -48,7 +52,7 @@ The "pass" column in the sheet is empty, so the thresholds marked *(proposed)* a
 ### 5. Diverse language & structure (soft)
 - **1:** same wording and structure every time. **3:** repetitive, similar structure.
   **5:** mostly unique wording, varied structure.
-- **Failure example:** every output opens with "You crushed" / "Wow". "You crushed" is banned in most cases.
+- **Failure example:** every output opens with "You crushed" / "Wow".
 
 ## Known failures from dogfooding (llama3.2:3b, 2026-10-14)
 From `TP Evaluation` → `dogfood` "What's wrong", each with a golden regression case:
